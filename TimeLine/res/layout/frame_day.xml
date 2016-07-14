@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#fff" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent">
+	<fragment  
+        android:id="@+id/id_fragment_content"  
+        android:name="com.timeline.fragments.SlipWeekFragment"  
+        android:layout_width="fill_parent"  
+        android:layout_height="100dp" /> 
+	<fragment  
+        android:id="@+id/id_fragment_shedule"  
+        android:name="com.timeline.fragments.DayFragment"  
+        android:layout_width="fill_parent"  
+        android:layout_height="match_parent" /> 
+</LinearLayout>

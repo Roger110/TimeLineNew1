@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF" >
+
+  <!--    	<RelativeLayout
+    	    android:id="@+id/meeting_header"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="40dip"
+    	    android:layout_alignParentLeft="true"
+    	    android:layout_alignParentTop="true"
+    	    android:background="@color/red" >
+
+    	    <ImageView
+    	        android:id="@+id/main_head_logo"
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_centerVertical="true"
+    	        android:layout_marginLeft="5.0dip"
+    	        android:src="@drawable/frame_logo_setting" />
+
+    	    <TextView
+    	        android:id="@+id/main_head_title"
+    	        style="@style/main_head_title"
+  				android:layout_centerInParent="true"
+    	        android:text="会议通知" />
+    	</RelativeLayout>-->
+  	 <include
+       	android:id="@+id/meeting_header"
+   	    layout="@layout/normal_header"
+   	    android:layout_height="wrap_content"
+   	    android:layout_width="fill_parent"
+   	    android:layout_weight="1"/>
+	<RelativeLayout
+        android:id="@+id/meeting_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_below="@id/meeting_header"
+        android:orientation="vertical"
+        android:background="#fff"
+        >             
+      
+         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+        	android:layout_gravity="center_vertical" 
+        	android:background="@color/white"
+        	>
+        	
+            <LinearLayout
+                android:id="@+id/meeting_tab_mes"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+              	android:gravity="center_vertical"
+              	android:orientation="vertical"
+	        	android:state_enabled="true"
+              	android:layout_weight="1">               	
+                <TextView
+                    android:id="@+id/meeting_mes"
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:padding="5dip"
+	                android:layout_width="match_parent"
+	    			android:layout_height="wrap_content"
+            		android:text="会议通知"
+        			android:clickable="true"
+            		/>                
+        	 </LinearLayout>
+        	     <TextView
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:layout_gravity="center_vertical"
+            		android:text="|"
+            		/>  
+        	 <LinearLayout
+                android:id="@+id/meeting_tab_shc"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+              	android:gravity="center_vertical"
+              	android:orientation="horizontal"
+	        	android:state_enabled="false"
+              	android:layout_weight="1">             
+         	     	
+                <TextView
+                     android:id="@+id/meeting_shc"
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:padding="5dip"
+	                android:layout_width="match_parent"
+	    			android:layout_height="wrap_content"
+            		android:text="会议日程"
+        			android:clickable="true"
+            		/>   
+      	
+        	     
+        	 </LinearLayout>
+        	      <TextView
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:layout_gravity="center_vertical"
+            		android:text="|"
+            		/>  
+        	 <LinearLayout
+                android:id="@+id/meeting_tab_peo"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+              	android:gravity="center_vertical"
+              	android:orientation="horizontal"
+	        	android:state_enabled="false"
+              	android:layout_weight="1">         	     	
+                <TextView
+                    android:id="@+id/meeting_peo"
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:padding="5dip"
+	                android:layout_width="match_parent"
+	    			android:layout_height="wrap_content"
+            		android:text="会议嘉宾"
+        			android:clickable="true"
+            		/>   
+
+        	 </LinearLayout>
+        	 
+
+        </LinearLayout>     
+       
+    </RelativeLayout>
+         <RelativeLayout
+        android:id="@+id/meeting_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+     android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="#fff"
+        >             
+      
+         <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+        	android:layout_gravity="center_vertical" 
+        	android:background="@color/white"
+        	>
+        	
+            <LinearLayout
+                android:id="@+id/meeting_tab_join"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+              	android:gravity="center_vertical"
+              	android:orientation="horizontal"
+	        	android:state_enabled="true"
+              	android:layout_weight="1">               	
+               <ImageView
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_centerVertical="true"
+    	        android:layout_marginLeft="20dip"
+    	        android:src="@drawable/meeting_up" />
+                <TextView
+                    android:id="@+id/meeting_join"
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:padding="5dip"
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+            		android:text="报名"
+        			android:clickable="true"
+        			android:layout_marginLeft="10dip"
+            		/>                
+        	 </LinearLayout>
+        	     <TextView
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:layout_gravity="center_vertical"
+            		android:text="|"
+            		android:textColor="@color/gray"
+            		/>  
+        	 <LinearLayout
+                android:id="@+id/meeting_tab_get"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+              	android:gravity="center_vertical"
+              	android:orientation="horizontal"
+	        	android:state_enabled="false"
+              	android:layout_weight="1">             
+         	     	               <ImageView
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_centerVertical="true"
+    	        android:layout_marginLeft="20dip"
+    	        android:src="@drawable/icon_meeting_col" />
+                <TextView
+                     android:id="@+id/meeting_get"
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:padding="5dip"
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+            		android:text="收藏"
+        			android:clickable="true"
+        			android:layout_marginLeft="10dip"
+            		/>   
+      	
+        	     
+        	 </LinearLayout>
+        	      <TextView
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:layout_gravity="center_vertical"
+            		android:text="|"
+            		android:textColor="@color/gray"
+            		/>  
+        	 <LinearLayout
+                android:id="@+id/meeting_tab_refuse"
+            	android:layout_width="wrap_content"
+            	android:layout_height="match_parent"
+              	android:gravity="center_vertical"
+              	android:orientation="horizontal"
+	        	android:state_enabled="false"
+              	android:layout_weight="1">         	    
+             <ImageView
+    	        android:layout_width="wrap_content"
+    	        android:layout_height="wrap_content"
+    	        android:layout_alignParentLeft="true"
+    	        android:layout_centerVertical="true"
+    	        android:layout_marginLeft="20dip"
+    	        android:src="@drawable/icon_meeting_reject" /> 	
+                <TextView
+                    android:id="@+id/meeting_refuse"
+                    style="@style/TextPagerMenuTextStyle"
+		        	android:gravity="center"            	
+	                android:padding="5dip"
+	                android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+            		android:text="拒绝"
+        			android:clickable="true" 
+        			android:layout_marginLeft="10dip" />   
+
+        	 </LinearLayout>
+        	 
+
+        </LinearLayout>     
+       
+    </RelativeLayout>
+            <android.support.v4.view.ViewPager
+        	android:id="@+id/Meeting_Tabpager"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@id/meeting_sheet"
+        	android:layout_above="@id/meeting_bottom"
+        	android:layout_gravity="center" > 
+        </android.support.v4.view.ViewPager>  
+</RelativeLayout>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!-- 应用程序名 -->
+    <string name="app_name">TimeLine</string>
+    
+    <!-- 设置 -->
+    <string name="action_settings">设置</string>
+    
+    <!-- 首页 -->
+    <string name="home_head_title">MOONS\' LED</string>    
+    
+	<!-- 主菜单 -->
+    <string name="main_menu_day">Day</string>
+	<string name="main_menu_week">Week</string>
+	<string name="main_menu_month">Month</string>
+	<string name="main_menu_meeting">Meeting</string>
+
+	    
+    <drawable name="btn_normal">#db4043</drawable>
+	<drawable name="btn_pressed">#c0db4043</drawable>
+</resources>

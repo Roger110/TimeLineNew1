@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/signin_header"
+            android:layout_width="fill_parent"
+            android:layout_height="120dip" >
+
+            <ImageView
+                android:id="@+id/signin_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:src="@drawable/frame_logo_setting" />
+              <TextView
+                android:id="@+id/text_head"
+                style="@style/main_head_title"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="会议签到"
+                 android:textColor="@color/black"
+                android:textSize="@dimen/text_size_15" />
+            <ImageView
+                android:id="@+id/signin_head_ima"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+              	android:layout_below="@id/text_head"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_no_signin" />
+
+
+        </RelativeLayout>
+
+
+	<RelativeLayout
+	    android:id="@+id/re_tabpeople_job"
+	    android:layout_width="match_parent"
+	    android:layout_height="40dp"
+	    android:layout_alignTop="@+id/tabpeople_title"
+	    android:layout_toRightOf="@+id/tabpeople_title"
+	    android:orientation="vertical" >
+            
+        <RelativeLayout 
+        android:id="@+id/tabpeople_title" 
+	  	android:layout_width="30dp" 
+	  	android:layout_height="match_parent"
+	  	android:layout_alignParentLeft="true"
+	  	android:layout_alignParentTop="true"
+	    android:layout_gravity="center_vertical"
+	  	android:gravity="center"
+	  	>     
+	  	
+        <TextView 
+            android:id="@+id/item_signin_no"
+	      	android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	        android:layout_gravity="center_vertical"
+	        android:text="1"
+	        android:textColor="@color/black"
+	        android:textSize="@dimen/text_size_22"
+	        />	  	
+    </RelativeLayout>
+    	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_alignTop="@+id/tabpeople_title"
+	    android:layout_toRightOf="@+id/tabpeople_title"
+	    android:orientation="vertical" >
+        <com.timeline.widget.CircleImageView
+                android:id="@+id/item_signin_ima"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/piccolor" 
+                app:border_color="@color/white"
+                app:border_width="2dp"/>
+	    <TextView
+	        android:id="@+id/item_signin_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_toRightOf="@id/item_signin_ima"
+	        android:layout_marginLeft="5dip"
+	        android:layout_marginTop="7dip"
+	        android:singleLine="true"
+	        android:text="我"
+	        android:textSize="@dimen/text_size_15" />
+	</RelativeLayout>
+	</RelativeLayout>
+        
+        
+           <TextView
+               android:id="@+id/my_head_login"
+               android:layout_width="fill_parent"
+               android:layout_height="35dp"
+               android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+               android:background="@color/lighter_gray"
+               android:text="签到排行榜"
+               android:textColor="@color/black"
+               android:textSize="@dimen/text_size_17" />
+		<ListView
+		    android:id="@+id/signin_listview"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:cacheColorHint="#0000"
+		    android:divider="@null"
+		    android:dividerHeight="5dp"
+		    android:scrollbarStyle="outsideOverlay"
+		    android:stackFromBottom="false" >
+		</ListView>
+</LinearLayout>
+</LinearLayout>

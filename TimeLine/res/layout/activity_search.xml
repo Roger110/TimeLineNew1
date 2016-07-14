@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffffff">
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="80dp"
+	    android:background="#ffff0000"
+	    android:orientation="horizontal">
+	    <EditText 
+	        android:id="@+id/id_edSearchContent"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="35dp"
+	        android:layout_marginBottom="5dp"
+	        android:paddingLeft="40dp"
+	        android:paddingRight="0dp"
+	        android:hint="搜索">
+		</EditText>
+	   	<ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/id_edSearchContent"
+            android:layout_alignTop="@+id/id_edSearchContent"
+            android:layout_marginTop="2dp"
+            android:scaleType="matrix"
+            android:src="@drawable/test" />
+	</RelativeLayout>
+	
+   <!-- <com.timeline.controls.SearchEditText
+        android:id="@+id/activity_main_input_edittext"
+        style="@style/searchEditTextStyle"
+        android:layout_marginTop="20dp" />
+
+    <com.timeline.controls.SearchEditText
+        android:id="@+id/activity_main_input_edittext2"
+        style="@style/searchEditTextStyle"
+        android:layout_below="@+id/activity_main_input_edittext"
+        android:layout_marginTop="20dp" />
+ -->
+</LinearLayout>

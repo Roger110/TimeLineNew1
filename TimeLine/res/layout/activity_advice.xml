@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/meeting_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            layout="@layout/normal_header" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="10dp"
+            android:text="知错能改，善莫大焉，我们需要您的意见"
+            android:textSize="@dimen/text_size_15" />
+
+        <EditText
+            android:id="@+id/text_advice"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginTop="5.0dip"
+            android:hint="请留下您宝贵的意见"
+            android:selectAllOnFocus="true"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textSize="@dimen/text_size_15" />
+
+        <Button
+            android:id="@+id/advice_btn_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="48dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="25.0dip"
+            android:background="@drawable/selector_red_button"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_20" />
+    </LinearLayout>
+
+</LinearLayout>

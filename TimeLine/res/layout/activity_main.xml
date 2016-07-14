@@ -1,0 +1,126 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:mycontrols="http://schemas.android.com/apk/res/com.timeline.main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.timeline.ui.Main" >
+
+    <RelativeLayout
+        android:id="@+id/home_head"
+        android:layout_width="fill_parent"
+        android:layout_height="80dip"
+        android:background="@color/red"
+        android:paddingBottom="15dp" >
+
+        <ImageButton
+            android:id="@+id/img_head"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="10dip"
+            android:background="@color/full_transparent"
+            android:contentDescription="head"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_main_head" />
+
+        <TextView
+            android:id="@+id/home_head_title"
+            style="@style/main_head_title"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="bottom"
+            android:text="2016.4.17" />
+
+        <ImageButton
+            android:id="@+id/home_head_morebutton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@color/full_transparent"
+            android:contentDescription="more"
+            android:src="@drawable/icon_home_search" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/home_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/tab_bg"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <com.timeline.controls.ChangeColorIconWithText
+            android:id="@+id/indicator_day"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            mycontrols:icon="@drawable/icon_day"
+            mycontrols:text="@string/main_menu_day"
+            mycontrols:color="#ffff0000" >
+        </com.timeline.controls.ChangeColorIconWithText>
+
+        <com.timeline.controls.ChangeColorIconWithText
+            android:id="@+id/indicator_week"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            mycontrols:icon="@drawable/icon_week"
+            mycontrols:text="@string/main_menu_week"
+            mycontrols:color="#ffff0000" >
+        </com.timeline.controls.ChangeColorIconWithText>
+
+        <com.timeline.controls.ChangeColorIconWithText
+            android:id="@+id/indicator_month"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            mycontrols:icon="@drawable/icon_month"
+            mycontrols:text="@string/main_menu_month"
+            mycontrols:color="#ffff0000" >
+        </com.timeline.controls.ChangeColorIconWithText>
+
+        <com.timeline.controls.ChangeColorIconWithText
+            android:id="@+id/indicator_meeting"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            mycontrols:icon="@drawable/icon_meeting"
+            mycontrols:text="@string/main_menu_meeting"
+            mycontrols:color="#ffff0000" >
+        </com.timeline.controls.ChangeColorIconWithText>
+    </LinearLayout>
+
+    <com.timeline.controls.NoScrollViewPager
+        android:id="@+id/id_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/home_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/home_head" >
+    </com.timeline.controls.NoScrollViewPager>
+
+    <ImageButton
+        android:id="@+id/home_add"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_above="@id/home_bottom"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@color/full_transparent"
+        android:contentDescription="head"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_home_add" />
+
+</RelativeLayout>

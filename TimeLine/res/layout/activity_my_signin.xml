@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/my_info_header"
+            android:layout_width="fill_parent"
+            android:layout_height="180dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/red" >
+
+            <ImageButton
+                android:id="@+id/my_head_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:background="@color/full_transparent"
+                android:src="@drawable/back" />
+
+            <com.timeline.widget.CircleImageView
+                android:id="@+id/my_head_ima"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_nosignin"
+                app:border_color="@color/white"
+                app:border_width="2dp" />
+
+            <TextView
+                android:id="@+id/my_head_login"
+                style="@style/main_head_title"
+                android:layout_below="@id/my_head_ima"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:text="登录/注册"
+                android:textColor="@color/selector_text_press_color"
+                android:onClick="Btn_login"
+                android:textSize="@dimen/text_size_15" />
+        </RelativeLayout>
+	 <RelativeLayout
+            android:id="@+id/my_info_last"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "10dp"
+            android:clickable="true"
+            android:onClick="Before_Meeting" >
+
+
+            <ImageView
+                android:id="@+id/img_info_last_meeting"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/image_marginLeft"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_before_me" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="往期会议"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_tools_collect"
+			android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/widget_listview_Item"
+            android:clickable="true"
+            android:onClick="btn_Collect" >
+             
+
+
+            <ImageView
+                android:id="@+id/img_tools_collect"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/image_marginLeft"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_my_collect" />
+
+            <RelativeLayout
+                android:id="@+id/layout_memu_tools_nfc_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_tools_collect"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="我的收藏"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/my_info_setting"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:layout_marginTop = "10dp"
+            android:onClick="SetClick" >
+
+            <ImageView
+                android:id="@+id/img_info_setting"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/image_marginLeft"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_setting" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout__itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_setting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="设置与帮助"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_tools_readid"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_Advice" >
+             
+
+            <ImageView
+                android:id="@+id/img_tools_readid"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/image_marginLeft"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_advise" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_tools_readid"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="意见反馈"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

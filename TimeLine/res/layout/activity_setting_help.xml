@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/meeting_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            layout="@layout/normal_header" />
+
+        <RelativeLayout
+            android:id="@+id/setting_toast"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+
+            <RelativeLayout
+                android:id="@+id/setting_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="消息通知"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ToggleButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:background="@android:color/transparent"
+                    android:button="@drawable/ios7_btn"
+                    android:checked="false"
+                    android:text=""
+                    android:textOff=""
+                    android:textOn="" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/setting_pass"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_SetPass" >
+
+            <RelativeLayout
+                android:id="@+id/pass_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="设置密码"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+       <RelativeLayout
+            android:id="@+id/setting_call"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="btn_Call" >
+
+
+            <RelativeLayout
+                android:id="@+id/call_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="客服电话"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/setting_grade"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_Grade" >
+
+            <RelativeLayout
+                android:id="@+id/grade_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="给我们打分吧"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/setting_help"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="btn_Help" >
+
+
+            <RelativeLayout
+                android:id="@+id/help_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="帮助"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/setting_declare"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_Declare" >
+
+            <RelativeLayout
+                android:id="@+id/declare_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:layout_toRightOf="@id/img_info_last_meeting"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/widget_listview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="4dp"
+                    android:text="声明"
+                    android:textSize="@dimen/text_size_15" />
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sms_btn_ok"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/selector_red_button"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_20" />
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/track_tab_history"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/white" > 
+    <RelativeLayout 
+		android:id="@+id/ll_meeting_tab" 
+	  	android:layout_width="fill_parent" 
+	  	android:layout_height="fill_parent"
+	  	>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" 
+            android:gravity="center_vertical"
+            android:text="部分参会嘉宾"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_18"
+            android:layout_marginLeft ="20dp"/>
+		<ListView
+		    android:id="@+id/meeting_tab_listview"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+			android:layout_below="@+id/title"
+		    android:cacheColorHint="#0000"
+		    android:divider="@null"
+		    android:dividerHeight="5dp"
+		    android:scrollbarStyle="outsideOverlay"
+		    android:stackFromBottom="false" >
+		</ListView>
+	    
+	</RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:baselineAligned="false"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:weightSum="14"
+	android:background="@drawable/tab_bg"
+	android:orientation="horizontal">
+	
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="0dp" 
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_weight="2">
+
+		<TextView android:id="@+id/day"
+		    android:layout_width="wrap_content"
+			android:layout_height="0dp" 
+			android:layout_weight="2"
+			android:layout_gravity="center_horizontal"
+			android:textColor="#FFFF0000"
+			android:textSize="30sp"
+			android:text="17"/>
+		<TextView android:id="@+id/weekday" 
+		    android:layout_width="wrap_content"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:layout_gravity="center_horizontal" 
+			android:layout_below="@+id/day"
+			android:textColor="#FFFF0000"
+			android:textSize="15sp"
+			android:text="周日"/>
+	</LinearLayout>
+	<LinearLayout
+	    android:id="@+id/id_dayContent"
+	    android:layout_width="0dp"
+	    android:layout_height="fill_parent"	
+	    android:layout_gravity="center_vertical"
+	    android:orientation="horizontal" 
+	    android:layout_weight="12">
+
+	   <!--  <include 
+   	    layout="@layout/listitem_weekdaycontent" 
+   	    android:layout_height="fill_parent"
+   	    android:layout_width="fill_parent"
+   	    android:background="@drawable/tab_bg"
+   	    /> -->
+	</LinearLayout>
+</LinearLayout>

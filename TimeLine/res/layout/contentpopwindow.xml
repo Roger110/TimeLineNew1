@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFBBFFBB"
+    android:orientation="vertical" > -->
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+ 
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        
+        <ImageView
+            android:id="@+id/id_topicImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test"
+             />
+        <TextView
+            android:id="@+id/id_topicText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+				android:maxEms="14"
+				android:ellipsize="end"
+            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+ 		
+        </TableRow>
+          <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12">
+      	<ImageView
+            android:id="@+id/id_orgnizerImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test"
+             />
+        <TextView
+            android:id="@+id/id_orgnizerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+				android:maxEms="14"
+				android:ellipsize="end"
+            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12">
+      	<ImageView
+            android:id="@+id/id_timeImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test"
+             />
+        <TextView
+            android:id="@+id/id_timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+				android:maxEms="14"
+				android:ellipsize="end"
+            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+        </TableRow>
+        
+         <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="12">
+      	<ImageView
+            android:id="@+id/id_addressImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/test"
+             />
+        <TextView
+            android:id="@+id/id_addressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+				android:maxEms="14"
+				android:ellipsize="end"
+            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+        </TableRow>
+        <TableRow  
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+			
+			    <Button
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:background="@drawable/test">
+			    </Button>
+			    
+			    <Button
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:background="@drawable/test">
+			    </Button>
+			    
+			    <Button
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:background="@drawable/test">
+			    </Button>
+			    
+			    <Button
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1"
+			        android:background="@drawable/test">
+			    </Button>
+    	</TableRow>
+    </TableLayout>
+
+<!-- </LinearLayout> -->

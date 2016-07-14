@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    style="@style/widget_listview_Item"
+    android:orientation="horizontal" 
+  	android:layout_height="50dip"
+	>   
+	<RelativeLayout 
+		android:id="@+id/layout_fameetplan_itemdesc" 
+	  	android:layout_width="match_parent" 
+	  	android:layout_height="40dip"
+	  	android:layout_alignParentRight="true"
+	  	android:orientation="vertical" 
+	  	>     
+	  	
+	
+	    
+		    <TextView android:id="@+id/layout_fameetplan_date" 
+		        style="@style/widget_listview_title"
+		        android:layout_width="wrap_content" 
+		     	android:layout_height="wrap_content"
+		     	android:layout_alignParentLeft="true"
+		     	android:text="title"
+		     	android:textSize ="@dimen/text_size_20"
+		     	android:layout_marginLeft="10dp"
+		     	android:layout_marginTop="6dp"
+		     	android:singleLine="true"/> 
+		     	
+     				
+		    <TextView android:id="@+id/layout_fameetplan_time" 
+		        style="@style/widget_listview_title"
+		        android:layout_width="wrap_content" 
+		     	android:layout_height="wrap_content"
+				android:layout_toRightOf="@id/layout_fameetplan_date"
+		     	android:text="title"
+		     	android:textSize ="@dimen/text_size_20"
+		     	android:layout_marginTop="6dp"
+		     	android:layout_marginLeft="35dp"
+		     	android:singleLine="true"/> 	
+	    
+	    
+    </RelativeLayout>	
+	
+
+
+</RelativeLayout> 

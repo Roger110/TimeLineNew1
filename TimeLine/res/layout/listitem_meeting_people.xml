@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    style="@style/widget_listview_Item"
+    android:orientation="horizontal" 
+  	android:layout_height="60dip"
+  	android:padding="5dp"
+  	android:background="@drawable/listitem_corner1"
+	>   
+	
+	<RelativeLayout 
+		android:id="@+id/tabpeople_title" 
+	  	android:layout_width="70dp" 
+	  	android:layout_height="match_parent"
+	  	android:layout_alignParentLeft="true"
+	  	android:layout_alignParentTop="true"
+	    android:layout_gravity="center_vertical"
+	  	android:gravity="center"
+	  	>     
+	  	
+        <TextView 
+            android:id="@+id/tabpeople_name"
+	      	android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	        android:layout_gravity="center_vertical"
+	        android:text="蒋一峰"
+	        android:textColor="@color/black"
+	        android:textSize="@dimen/text_size_20"
+	        />	  	
+    </RelativeLayout>
+    
+	<RelativeLayout 
+		android:id="@+id/re_tabpeople_job" 
+	  	android:layout_width="match_parent" 
+	  	android:layout_height="match_parent"
+	  	android:layout_toRightOf="@id/tabpeople_title"
+	  	android:layout_alignParentRight="true"
+	  	android:orientation="vertical" 
+	  	>        
+	    <TextView android:id="@+id/tabpeople_job" 
+	        android:layout_width="wrap_content" 
+	     	android:layout_height="wrap_content"
+	     	android:layout_centerVertical="true"  
+	     	android:layout_marginLeft="10dip"
+	     	android:layout_marginTop="7dip"
+	     	android:text="中国医疗器械行业副会长"
+	     	 android:textSize="@dimen/text_size_16"
+	     	android:singleLine="true"/> 	        
+    </RelativeLayout>	
+	
+
+
+</RelativeLayout> 

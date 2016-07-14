@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/widget_listview_Item"
+    android:orientation="horizontal" 
+  	android:layout_height="60dip"
+  	android:padding="5dp"
+  	android:background="@drawable/listitem_corner1"
+	>   
+	
+	<RelativeLayout 
+		android:id="@+id/tabpeople_title" 
+	  	android:layout_width="40dp" 
+	  	android:layout_height="match_parent"
+	  	android:layout_alignParentLeft="true"
+	  	android:layout_alignParentTop="true"
+	    android:layout_gravity="center_vertical"
+	  	android:gravity="center"
+	  	>     
+	  	
+        <TextView 
+            android:id="@+id/item_signin_no"
+	      	android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dip"
+	         android:layout_marginTop="10dp"
+	        android:layout_gravity="center_vertical"
+	        android:text="10"
+	        android:textColor="@color/black"
+	        android:textSize="@dimen/text_size_22"
+	        />	  	
+    </RelativeLayout>
+
+	<RelativeLayout
+	    android:id="@+id/re_tabpeople_job"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_toRightOf="@+id/tabpeople_title"
+	    android:orientation="vertical" >
+        <com.timeline.widget.CircleImageView
+                android:id="@+id/item_signin_ima"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/piccolor" 
+                app:border_color="@color/white"
+                app:border_width="2dp"/>
+	    <TextView
+	        android:id="@+id/item_signin_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_toRightOf="@id/item_signin_ima"
+	        android:layout_marginLeft="15dip"
+	        android:layout_marginTop="7dip"
+	        android:singleLine="true"
+	        android:text="中国医疗器械行业副会长"
+	        android:textSize="@dimen/text_size_15" />
+	</RelativeLayout>
+
+</RelativeLayout> 

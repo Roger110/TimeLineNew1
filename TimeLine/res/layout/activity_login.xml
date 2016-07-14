@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/login_header"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/red" >
+
+        <TextView
+            android:id="@+id/login_head_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dip"
+            android:clickable="true"
+            android:onClick="Btn_Cancel"
+            android:text="取消"
+            android:textColor="@color/selector_text_press_color" />
+
+        <TextView
+            android:id="@+id/login_head_title"
+            style="@style/main_head_title"
+            android:layout_centerInParent="true"
+            android:text="登 录" />
+
+        <TextView
+            android:id="@+id/login_head_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5.0dip"
+            android:clickable="true"
+            android:onClick="Btn_Register"
+            android:text="注册"
+            android:textColor="@color/selector_text_press_color" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/login_account"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_marginTop="50.0dip"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="手机号"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_18" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_marginTop="25.0dip"
+        android:background="@color/white"
+        android:gravity="center"
+        android:hint="密码"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_18" />
+
+    <Button
+        android:id="@+id/login_btn_login"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="25.0dip"
+        android:background="@drawable/selector_red_button"
+        android:text="登 录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_20" />
+
+    <TextView
+        android:id="@+id/login_forget"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="25.0dip"
+        android:gravity="center"
+        android:text="忘记密码？"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_size_15"
+        android:textStyle="bold" />
+
+</LinearLayout>

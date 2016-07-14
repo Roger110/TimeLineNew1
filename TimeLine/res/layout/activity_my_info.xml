@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lighter_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <include
+            android:id="@+id/my_info_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            layout="@layout/normal_header" />
+
+        <RelativeLayout
+            android:id="@+id/my_info_headportrait"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="btn_HeadSet" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/gray" />
+
+            <TextView
+                style="@style/widget_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:text="头像"
+                android:textSize="@dimen/text_size_15" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="100dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/myinfo_head"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+
+                <com.timeline.widget.CircleImageView
+                    android:id="@+id/my_head_ima"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginRight"
+                    android:layout_toLeftOf="@id/myinfo_head"
+                    android:src="@drawable/piccolor"
+                    app:border_color="@color/white"
+                    app:border_width="2dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/my_info_name"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="btn_NameSet" >
+
+            <TextView
+                style="@style/widget_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:text="姓名"
+                android:textSize="@dimen/text_size_15" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/myinfo_name"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+
+                <TextView
+                    android:id="@+id/myinfo_name_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginRight"
+                    android:layout_toLeftOf="@id/myinfo_name"
+                    android:padding="4dp"
+                    android:text="李文"
+                    android:textSize="@dimen/text_size_15" />
+            </RelativeLayout>
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/my_info_sexual"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_SexualSet" >
+
+            <TextView
+                style="@style/widget_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:text="性别"
+                android:textSize="@dimen/text_size_15" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/myinfo_sexual"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+
+                <TextView
+                    android:id="@+id/myinfo_sexual_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginRight"
+                    android:layout_toLeftOf="@id/myinfo_sexual"
+                    android:padding="4dp"
+                    android:text="男"
+                    android:textSize="@dimen/text_size_15" />
+            </RelativeLayout>
+        </RelativeLayout>
+        
+        
+        
+         <RelativeLayout
+            android:id="@+id/my_info_office"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="btn_OfficeSet" >
+
+            <TextView
+                style="@style/widget_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:text="科室"
+                android:textSize="@dimen/text_size_15" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/myinfo_office"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+
+                <TextView
+                    android:id="@+id/myinfo_name_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginRight"
+                    android:layout_toLeftOf="@id/myinfo_office"
+                    android:padding="4dp"
+                    android:text="小儿科"
+                    android:textSize="@dimen/text_size_15" />
+            </RelativeLayout>
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/my_info_duty"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_DutySet" >
+
+            <TextView
+                style="@style/widget_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:text="职务"
+                android:textSize="@dimen/text_size_15" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/myinfo_duty"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+
+                <TextView
+                    android:id="@+id/myinfo_duty_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                   android:layout_marginRight="@dimen/image_marginRight"
+                    android:layout_toLeftOf="@id/myinfo_duty"
+                    android:padding="4dp"
+                    android:text="主任医师"
+                    android:textSize="@dimen/text_size_15" />
+            </RelativeLayout>
+        </RelativeLayout>
+        
+      <RelativeLayout
+            android:id="@+id/my_info_jobtitle"
+            style="@style/widget_listview_Item"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="btn_JobtitleSet" >
+
+            <TextView
+                style="@style/widget_listview_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="4dp"
+                android:text="职称"
+                android:textSize="@dimen/text_size_15" />
+
+            <RelativeLayout
+                android:id="@+id/my_info_layout_itemdesc"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/texttoimage_marginLeft"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/myinfo_jobtitle"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginLeft"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_cli" />
+
+                <TextView
+                    android:id="@+id/myinfo_duty_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/image_marginRight"
+                    android:layout_toLeftOf="@id/myinfo_jobtitle"
+                    android:padding="4dp"
+                    android:text="院长"
+                    android:textSize="@dimen/text_size_15" />
+            </RelativeLayout>
+        </RelativeLayout>    
+    </LinearLayout>
+
+</LinearLayout>
