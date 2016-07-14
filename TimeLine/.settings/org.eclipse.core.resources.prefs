@@ -2,6 +2,7 @@ eclipse.preferences.version=1
 encoding//src/com/timeline/adapter/DaySwipDateAdapter.java=GBK
 encoding//src/com/timeline/adapter/MeetingGuestAdapter.java=GBK
 encoding//src/com/timeline/adapter/SigninGuestAdapter.java=UTF-8
+encoding//src/com/timeline/app/AppConfig.java=GBK
 encoding//src/com/timeline/app/AppContext.java=GBK
 encoding//src/com/timeline/bean/CalendarBean.java=UTF-8
 encoding//src/com/timeline/calendar/CalendarUtils.java=UTF-8

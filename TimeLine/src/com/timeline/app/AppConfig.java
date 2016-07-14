@@ -23,7 +23,7 @@ import android.preference.PreferenceManager;
 @SuppressLint("NewApi")
 public class AppConfig {
 
-	private final static String APP_CONFIG = "config2222";
+	private final static String APP_CONFIG = "config1111";
 
 
 	public final static String CONF_APP_UNIQUEID = "APP_UNIQUEID";
