@@ -14,6 +14,7 @@ encoding//src/com/timeline/fragments/DayFragment.java=UTF-8
 encoding//src/com/timeline/fragments/MonthFragment.java=UTF-8
 encoding//src/com/timeline/fragments/SlipWeekFragment.java=GBK
 encoding//src/com/timeline/fragments/WeekFragment.java=UTF-8
+encoding//src/com/timeline/interf/VolleyListenerInterface.java=GBK
 encoding//src/com/timeline/ui/BaseActivity.java=UTF-8
 encoding//src/com/timeline/ui/EventAddAc.java=UTF-8
 encoding//src/com/timeline/ui/InteractionAc.java=UTF-8
