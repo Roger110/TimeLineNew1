@@ -43,9 +43,9 @@ public class LoginInAc extends BaseActivity {
 			public void onMySuccess(String result) {
 				// TODO Auto-generated method stub
 				ReturnInfo info = JsonToEntityUtils.jsontoReinfo(result);
-				if (info.getRe_st().equals("success")) {
-					User us = JsonToEntityUtils.jsontoUser(info.getRe_info());
-					AppContext.setUser(us);
+				if (info.getRe_st().equals("consummate")) {
+//					User us = JsonToEntityUtils.jsontoUser(info.getRe_info());
+//					AppContext.setUser(us);
 					AppContext.getInstance().remenberPsw(account, psw);
 					UIHelper.showMain(LoginInAc.this);
 				}else {

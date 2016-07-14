@@ -17,6 +17,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/red"
+            android:textSize="@dimen/text_size_10"
             android:text="日" />
 
         <TextView
@@ -25,6 +26,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"
+            android:textSize="@dimen/text_size_10"
             android:text="一" />
 
         <TextView
@@ -33,6 +35,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"
+            android:textSize="@dimen/text_size_10"
             android:text="二" />
 
         <TextView
@@ -41,6 +44,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"
+            android:textSize="@dimen/text_size_10"
             android:text="三" />
 
         <TextView
@@ -49,6 +53,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"
+            android:textSize="@dimen/text_size_10"
             android:text="四" />
 
         <TextView
@@ -57,6 +62,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/black"
+            android:textSize="@dimen/text_size_10"
             android:text="五" />
 
         <TextView
@@ -65,6 +71,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/red"
+            android:textSize="@dimen/text_size_10"
             android:text="六" />
     </LinearLayout>
 

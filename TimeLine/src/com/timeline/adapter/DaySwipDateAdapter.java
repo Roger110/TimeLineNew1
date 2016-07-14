@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.timeline.main.R;
 import com.timeline.calendar.SpecialCalendar;
+import com.timeline.common.DensityUtil;
 import com.timeline.common.LunarCalendar;
 
 import android.R.integer;
