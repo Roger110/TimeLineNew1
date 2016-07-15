@@ -9,122 +9,227 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
- 
+        
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
             android:layout_weight="1">
         
         <ImageView
             android:id="@+id/id_topicImg"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="top"
+            android:src="@drawable/icon_event_pos"
+             />
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/test"
-             />
+            android:orientation="vertical">
         <TextView
             android:id="@+id/id_topicText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="top"
             android:singleLine="false"
-				android:maxEms="14"
-				android:ellipsize="end"
-            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
- 		
+            android:textSize="16sp"
+            android:textColor="#333333"
+			android:maxEms="14"
+			android:ellipsize="end"
+            android:text="2016年第68届美国神经学会年会" />
+        
+        <TextView
+            android:id="@+id/id_detailText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:singleLine="false"
+            android:textSize="12sp"
+            android:textColor="#999999"
+			android:maxEms="20"
+			android:ellipsize="end"
+            android:text="2015年美国神经学会年会上公布了大量的新临床研究和学科进展，美国神经病学会科学委员会副主席、哈佛医学院的神经病学副教授Natalia Rost博士强调有3个研究不可错过，最具开创性意义，在大会上，Natalia Rost博士和来自全球各国专家一起深入研究和探讨。" />
+ 		</LinearLayout>
+ 		<Button
+ 		    android:layout_height="12dp"
+ 		    android:layout_width="8dp"
+ 		    android:layout_marginTop="0dp"
+ 		    android:layout_marginRight="-12dp"
+ 		    android:gravity="top|right"
+ 		    android:background="@drawable/meeting_up">
+        </Button>
         </TableRow>
-          <TableRow
+        
+        <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_weight="12">
       	<ImageView
             android:id="@+id/id_orgnizerImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/test"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="top"
+            android:src="@drawable/icon_event_pos"
              />
         <TextView
             android:id="@+id/id_orgnizerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#333333"
             android:singleLine="false"
-				android:maxEms="14"
-				android:ellipsize="end"
-            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+			android:maxEms="14"
+			android:ellipsize="end"
+            android:text="美国神经内科学会" />
         </TableRow>
         <TableRow
             android:id="@+id/tableRow3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_weight="12">
       	<ImageView
             android:id="@+id/id_timeImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/test"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="top"
+            android:src="@drawable/icon_event_pos"
              />
         <TextView
             android:id="@+id/id_timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="false"
-				android:maxEms="14"
-				android:ellipsize="end"
-            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+            android:textSize="16sp"
+            android:textColor="#333333"
+			android:maxEms="14"
+			android:ellipsize="end"
+            android:text="4月17日 10:00 － 14:00" />
         </TableRow>
         
          <TableRow
             android:id="@+id/tableRow4"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
             android:layout_weight="12">
       	<ImageView
             android:id="@+id/id_addressImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/test"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_gravity="top"
+            android:src="@drawable/icon_event_pos"
              />
         <TextView
             android:id="@+id/id_addressText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#333333"
             android:singleLine="false"
-				android:maxEms="14"
-				android:ellipsize="end"
-            android:text="建筑面积当发生的发生的阿萨德发生大发的撒风飒风的AA发生的法师打发大事阿萨德发阿萨德" />
+			android:maxEms="14"
+			android:ellipsize="end"
+            android:text="洛杉矶" />
         </TableRow>
+        <View  
+   			android:layout_width="match_parent"  
+    		android:layout_height="1px" 
+    		android:layout_marginTop="12dp"
+    		android:layout_marginBottom="12dp"
+   			android:background="#999999"/> 
         <TableRow  
             android:id="@+id/tableRow5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-			
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="32dp">
+			<LinearLayout
+			    android:layout_width="0dp"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:orientation="vertical">
 			    <Button
-			        android:layout_width="0dp"
+			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-			        android:layout_weight="1"
-			        android:background="@drawable/test">
+			        android:gravity="center_horizontal|center_vertical"
+			        android:background="@drawable/meeting_up">
 			    </Button>
-			    
+			    <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="报名">
+			    </TextView>
+			    </LinearLayout>
+			    <LinearLayout
+			    android:layout_width="0dp"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:orientation="vertical">
 			    <Button
-			        android:layout_width="0dp"
+			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-			        android:layout_weight="1"
-			        android:background="@drawable/test">
+			        android:gravity="center_horizontal|center_vertical"
+			        android:background="@drawable/icon_viewinfo">
 			    </Button>
-			    
+			    <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="查看">
+			    </TextView>
+			    </LinearLayout>
+			    <LinearLayout
+			    android:layout_width="0dp"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:orientation="vertical">
 			    <Button
-			        android:layout_width="0dp"
+			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-			        android:layout_weight="1"
-			        android:background="@drawable/test">
+			        android:gravity="center_horizontal|center_vertical"
+			        android:background="@drawable/icon_indeterminate">
 			    </Button>
-			    
+			    <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="待定">
+			    </TextView>
+			    </LinearLayout>
+			    <LinearLayout
+			    android:layout_width="0dp"
+			    android:layout_height="wrap_content"
+			    android:layout_weight="1"
+			    android:orientation="vertical">
 			    <Button
-			        android:layout_width="0dp"
+			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-			        android:layout_weight="1"
-			        android:background="@drawable/test">
+			        android:gravity="center_horizontal|center_vertical"
+			        android:background="@drawable/icon_refuse">
 			    </Button>
+			    <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="拒绝">
+			    </TextView>
+			    </LinearLayout>
     	</TableRow>
     </TableLayout>
 
