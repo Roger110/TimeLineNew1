@@ -131,13 +131,40 @@ public class HttpFactory {
 	}
 	
 	/**
-	 * 意见反馈http
+	 * 获取客服电话http
 	 * @param volleyListenerInterface
 	 */
 	public static void Service_Phone(VolleyListenerInterface volleyListenerInterface){
 		String url = "http://event.gooddr.com/api/user/servicephone";
 		StringRequest request = new StringRequest(Method.GET, url,volleyListenerInterface.responseListener(), 
 			volleyListenerInterface.errorListener());  
+
+		request.setRetryPolicy(new DefaultRetryPolicy(50000,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		AppContext.getInstance().mQueue.add(request);
+	}
+	
+	/**
+	 * 获取指定日期会员参与的会议列表http
+	 * @param uid
+	 * @param content
+	 * @param volleyListenerInterface
+	 */
+	public static void getMeetingjoin_list(final String date,VolleyListenerInterface volleyListenerInterface){
+		String url = "http://event.gooddr.com/api/meeting/my_join_meeting_list";
+		StringRequest request = new StringRequest(Method.POST, url,volleyListenerInterface.responseListener(), 
+			volleyListenerInterface.errorListener())
+			{  
+			  @Override  
+			  protected Map<String, String> getParams() throws AuthFailureError {  
+			    Map<String, String> map = new HashMap<String, String>();  
+			    map.put("user_id",AppContext.getUser().getId());  
+			    map.put("login_token", AppContext.getUser().getLogin_token());  
+			    map.put("the_day",date); 
+			    return map;  
+			  }  
+			};  
 
 		request.setRetryPolicy(new DefaultRetryPolicy(50000,
 				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

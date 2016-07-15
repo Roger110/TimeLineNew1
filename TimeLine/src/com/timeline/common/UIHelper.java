@@ -26,6 +26,7 @@ import com.timeline.main.R;
 import com.timeline.ui.AdviceAc;
 import com.timeline.ui.EventAddAc;
 import com.timeline.ui.GuestSigninAc;
+import com.timeline.ui.InfoEditAc;
 import com.timeline.ui.InteractionAc;
 import com.timeline.ui.LoginInAc;
 import com.timeline.ui.Main;
@@ -106,8 +107,10 @@ private final static String TAG = "UIHelper";
 	 * 
 	 * @param activity
 	 */
-	public static void showMyInfo(Activity activity) {
+	public static void showMyInfo(Activity activity,String type,String name) {
 		Intent intent = new Intent(activity, MyInfoAc.class);
+		intent.putExtra("type", type);
+		intent.putExtra("name", name);
 		activity.startActivity(intent);
 	}
 	
@@ -187,6 +190,18 @@ private final static String TAG = "UIHelper";
 	 */
 	public static void showGuSign(Activity activity) {
 		Intent intent = new Intent(activity, GuestSigninAc.class);
+		activity.startActivity(intent);
+	}
+	
+	/**
+	 * 显示信息修改界面
+	 * 
+	 * @param activity
+	 */
+	public static void showInfoEdit(Activity activity,String type,String name) {
+		Intent intent = new Intent(activity, InfoEditAc.class);
+		intent.putExtra("type", type);
+		intent.putExtra("name", name);
 		activity.startActivity(intent);
 	}
 	/**

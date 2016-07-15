@@ -48,7 +48,7 @@ public class MySigninAc extends BaseActivity{
 			@Override
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				UIHelper.showMyInfo(MySigninAc.this);
+				UIHelper.showMyInfo(MySigninAc.this,"","");
 			}
 		});
 		  collecsRl = (RelativeLayout)findViewById(R.id.ll_tools_collect);

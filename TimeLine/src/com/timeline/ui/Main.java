@@ -4,10 +4,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.json.JSONObject;
+
+import com.android.volley.VolleyError;
 import com.timeline.interf.FragmentCallBack;
+import com.timeline.interf.VolleyListenerInterface;
 import com.timeline.main.R;
 import com.timeline.slidedatetimepicker.SlideDateTimeListener;
 import com.timeline.slidedatetimepicker.SlideDateTimePicker;
+import com.timeline.webapi.HttpFactory;
+import com.timeline.bean.MeetingInfo;
+import com.timeline.bean.User;
+import com.timeline.common.DateTimeHelper;
+import com.timeline.common.JsonToEntityUtils;
 import com.timeline.common.UIHelper;
 import com.timeline.controls.ChangeColorIconWithText;
 
@@ -46,7 +55,8 @@ public class Main extends BaseActivity implements FragmentCallBack{
 	private ImageButton btnadd;
 	
 	//day控件
-	
+	String daydate;
+	private VolleyListenerInterface dayvolleyListener;//当前日期会议搜索监听
 	
 	//week控件
 	
@@ -105,7 +115,31 @@ public class Main extends BaseActivity implements FragmentCallBack{
 			}
 		});
 		//day
-		
+		daydate = DateTimeHelper.getDateNow();
+		dayvolleyListener = new VolleyListenerInterface(Main.this){
+			@Override
+			public void onMySuccess(String result) {
+				// TODO Auto-generated method stub
+				try {
+					JSONObject myJsonObject = new JSONObject(result);
+					String rest = myJsonObject.getString("re_st");
+					if (rest.equals("success")) {
+						MeetingInfo[] meetings
+						= JsonToEntityUtils.jsontoMeetingInfo( myJsonObject.getString("re_info"));
+						String id = meetings[0].getId();
+				}
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			}
+
+			@Override
+			public void onMyError(VolleyError error) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		};
 		
 		
 		//week
@@ -125,7 +159,12 @@ public class Main extends BaseActivity implements FragmentCallBack{
 		  UIHelper.showGuSign(this);
 	  }
 	  
-    
+    @Override
+	  protected void onResume() {
+		super.onResume();
+		HttpFactory.getMeetingjoin_list(daydate, dayvolleyListener);
+	}
+	  
     private void initData() {
 		// TODO Auto-generated method stub
 		LayoutInflater mLi = LayoutInflater.from(this);

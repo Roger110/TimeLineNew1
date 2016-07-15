@@ -1,5 +1,7 @@
 package com.timeline.ui;
 
+import org.json.JSONObject;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -42,14 +44,21 @@ public class LoginInAc extends BaseActivity {
 			@Override
 			public void onMySuccess(String result) {
 				// TODO Auto-generated method stub
-				ReturnInfo info = JsonToEntityUtils.jsontoReinfo(result);
-				if (info.getRe_st().equals("consummate")) {
-//					User us = JsonToEntityUtils.jsontoUser(info.getRe_info());
-//					AppContext.setUser(us);
-					AppContext.getInstance().remenberPsw(account, psw);
-					UIHelper.showMain(LoginInAc.this);
-				}else {
-					UIHelper.ToastMessage(LoginInAc.this,info.getRe_info() );
+				try {
+					JSONObject myJsonObject = new JSONObject(result);
+					String rest = myJsonObject.getString("re_st");
+					if (rest.equals("success")) {
+						AppContext.getInstance().remenberPsw(account, psw);
+						User us = JsonToEntityUtils.jsontoUser( myJsonObject.getString("re_info"));
+						AppContext.setUser(us);
+						UIHelper.showMain(LoginInAc.this);
+					}else {
+						ReturnInfo info = JsonToEntityUtils.jsontoReinfo(result);
+						UIHelper.ToastMessage(LoginInAc.this,info.getRe_info() );
+					}
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
 				
 			}
