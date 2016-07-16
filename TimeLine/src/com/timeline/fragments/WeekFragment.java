@@ -99,32 +99,34 @@ public class WeekFragment extends Fragment{
 				LinearLayout content = new LinearLayout(getActivity());
 				LinearLayout.LayoutParams param=new LinearLayout.LayoutParams(
 						width, ViewGroup.LayoutParams.MATCH_PARENT);//定义布局管理器的参数
-				param.setMargins(5,0,0,0);
+				param.setMargins(8,0,0,0);
 				param.gravity = Gravity.CENTER_HORIZONTAL;
 				content.setOrientation(LinearLayout.VERTICAL);//所有组件垂直摆放
-				content.setBackgroundColor(Color.GREEN);
+				content.setBackgroundColor(Color.parseColor("#82d9a4"));
 
 				//定义显示组件的布局管理器，为了简单，本次只定义一个TextView组件
 				LinearLayout.LayoutParams topicText=new LinearLayout.LayoutParams(
 						ViewGroup.LayoutParams.WRAP_CONTENT, 0, 2.0f);//定义文本显示组件
-				topicText.gravity = Gravity.CENTER_HORIZONTAL | Gravity.TOP;
+				topicText.setMargins(16, 24, 24, 0);
+				//topicText.gravity = Gravity.LEFT | Gravity.TOP;
 				TextView topic = new TextView(getActivity());
 				topic.setLayoutParams(topicText);//配置文本显示组件的参数
-				topic.setText("动态生成内容1");//配置显示文字
+				topic.setText("2016年第68届美国神经学会年会");//配置显示文字
 				topic.setTextSize(13);
-				topic.setTextColor(Color.BLACK);
+				topic.setTextColor(Color.parseColor("#333333"));
 				topic.getPaint().setFakeBoldText(true);
 				content.addView(topic, topicText);
 				
 				//定义显示组件的布局管理器，为了简单，本次只定义一个TextView组件
 				LinearLayout.LayoutParams orgnizerText=new LinearLayout.LayoutParams(
 						ViewGroup.LayoutParams.WRAP_CONTENT, 0, 1.0f);//定义文本显示组件
-				orgnizerText.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
+				orgnizerText.setMargins(16, 0, 24, 16);
+				//orgnizerText.gravity = Gravity.LEFT | Gravity.BOTTOM;
 				TextView orgnizer = new TextView(getActivity());
 				orgnizer.setLayoutParams(orgnizerText);//配置文本显示组件的参数
-				orgnizer.setText("动态生成内容2");//配置显示文字
+				orgnizer.setText("美国神经内科学会年会");//配置显示文字
 				orgnizer.setTextSize(12);
-				orgnizer.setTextColor(Color.BLACK);
+				orgnizer.setTextColor(Color.parseColor("#333333"));
 				content.addView(orgnizer, orgnizerText);
 				
 				content.setOnClickListener(new ContentClickListener());
@@ -220,7 +222,12 @@ public class WeekFragment extends Fragment{
 	                R.color.white));
 
 	        // 设置好参数之后再show
+	        //popupWindow.showAtLocation(view, Gravity.NO_GRAVITY, (int)view.getX(), (int)view.getY());
+	        //popupWindow.showAsDropDown(view);
+	        WindowManager windowManager = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
+			// 显示的位置为:屏幕的宽度的一半-PopupWindow的高度的一半
+			int xPos = windowManager.getDefaultDisplay().getWidth() / 2
+					- popupWindow.getWidth() / 2;
 	        popupWindow.showAsDropDown(view);
-
 	    }
 }
