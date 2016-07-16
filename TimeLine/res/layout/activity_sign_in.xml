@@ -15,7 +15,7 @@
         <RelativeLayout
             android:id="@+id/signin_header"
             android:layout_width="fill_parent"
-            android:layout_height="120dip" >
+            android:layout_height="140dip" >
 
             <ImageView
                 android:id="@+id/signin_back"
@@ -23,16 +23,16 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="10.0dip"
-                android:layout_marginTop="10.0dip"
-                android:src="@drawable/frame_logo_setting" />
+                android:layout_marginTop="30.0dip"
+                android:src="@drawable/redback" />
               <TextView
                 android:id="@+id/text_head"
                 style="@style/main_head_title"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_centerHorizontal="true"
                 android:text="会议签到"
                  android:textColor="@color/black"
-                android:textSize="@dimen/text_size_15" />
+                android:textSize="@dimen/text_size_17" />
             <ImageView
                 android:id="@+id/signin_head_ima"
                 android:layout_width="60dp"
@@ -41,6 +41,15 @@
               	android:layout_below="@id/text_head"
                 android:layout_centerInParent="true"
                 android:src="@drawable/icon_no_signin" />
+                      <ImageView
+                android:id="@+id/signin_head_ima1"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+              	android:layout_below="@id/text_head"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_signin_ready"
+                android:visibility="gone" />
 
 
         </RelativeLayout>
@@ -112,9 +121,9 @@
                android:layout_centerInParent="true"
                 android:gravity="center_vertical"
                android:background="@color/lighter_gray"
-               android:text="签到排行榜"
-               android:textColor="@color/black"
-               android:textSize="@dimen/text_size_17" />
+               android:text="  签到排行榜"
+               android:textColor="#999999"
+               android:textSize="@dimen/text_size_15" />
 		<ListView
 		    android:id="@+id/signin_listview"
 		    android:layout_width="fill_parent"

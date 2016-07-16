@@ -5,9 +5,11 @@ import java.util.LinkedList;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.timeline.bean.MeetingDescribe;
 import com.timeline.bean.MeetingInfo;
 import com.timeline.bean.ReturnInfo;
 import com.timeline.bean.ReturnMsg;
+import com.timeline.bean.SigninPerson;
 import com.timeline.bean.User;
 
 public class JsonToEntityUtils {
@@ -38,6 +40,24 @@ public class JsonToEntityUtils {
 		Type listType = new TypeToken<LinkedList<MeetingInfo>>(){}.getType(); 
 		LinkedList<MeetingInfo> list = gson.fromJson(json, listType); 
 		MeetingInfo[] info = gson.fromJson(json, MeetingInfo[].class); 
+		if (info.length == 0) {
+			return null;
+		}
+		return info;
+	}
+	
+	public static MeetingDescribe jsontoMeetingDes(String json) {
+		Gson gson = new Gson();  
+		MeetingDescribe info = gson.fromJson(json, MeetingDescribe.class); 
+		return info;
+		
+	}
+	
+	public static SigninPerson[] jsontoSigninPerson(String json) {
+		Gson gson = new Gson();  
+		Type listType = new TypeToken<LinkedList<SigninPerson>>(){}.getType(); 
+		LinkedList<SigninPerson> list = gson.fromJson(json, listType); 
+		SigninPerson[] info = gson.fromJson(json, SigninPerson[].class); 
 		if (info.length == 0) {
 			return null;
 		}

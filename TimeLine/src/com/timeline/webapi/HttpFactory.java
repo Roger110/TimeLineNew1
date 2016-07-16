@@ -171,4 +171,59 @@ public class HttpFactory {
 				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 		AppContext.getInstance().mQueue.add(request);
 	}
+	
+	/**
+	 * 获取会议简介http
+	 * @param uid
+	 * @param content
+	 * @param volleyListenerInterface
+	 */
+	public static void getMeetingDescribe(final String id,VolleyListenerInterface volleyListenerInterface){
+		String url = "http://event.gooddr.com/api/meeting/meeting_describe";
+		StringRequest request = new StringRequest(Method.POST, url,volleyListenerInterface.responseListener(), 
+			volleyListenerInterface.errorListener())
+			{  
+			  @Override  
+			  protected Map<String, String> getParams() throws AuthFailureError {  
+			    Map<String, String> map = new HashMap<String, String>();  
+			    map.put("user_id",AppContext.getUser().getId());  
+			    map.put("login_token", AppContext.getUser().getLogin_token());  
+			    map.put("meeting_id",id); 
+			    return map;  
+			  }  
+			};  
+
+		request.setRetryPolicy(new DefaultRetryPolicy(50000,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		AppContext.getInstance().mQueue.add(request);
+	}
+	
+	
+	/**
+	 * 获取会议签到人列表http
+	 * @param uid
+	 * @param content
+	 * @param volleyListenerInterface
+	 */
+	public static void getMeetingSignPerson(final String id,VolleyListenerInterface volleyListenerInterface){
+		String url = "http://event.gooddr.com/api/meeting/sign_in_list";
+		StringRequest request = new StringRequest(Method.POST, url,volleyListenerInterface.responseListener(), 
+			volleyListenerInterface.errorListener())
+			{  
+			  @Override  
+			  protected Map<String, String> getParams() throws AuthFailureError {  
+			    Map<String, String> map = new HashMap<String, String>();  
+			    map.put("user_id",AppContext.getUser().getId());  
+			    map.put("login_token", AppContext.getUser().getLogin_token());  
+			    map.put("meeting_id",id); 
+			    return map;  
+			  }  
+			};  
+
+		request.setRetryPolicy(new DefaultRetryPolicy(50000,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		AppContext.getInstance().mQueue.add(request);
+	}
 }

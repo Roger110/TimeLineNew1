@@ -17,7 +17,7 @@
 	<color name="lightblue">#0083FF</color>
 	
     <color name="full_transparent">#00000000</color>
-    <color name="half_transparent">#e0000000</color>
+    <color name="half_transparent">#b8000000</color>
     
     <color name="bright_foreground_light">#ff000000</color>
     <color name="bright_foreground_light_inverse">#ffffffff</color>

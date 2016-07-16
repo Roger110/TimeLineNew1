@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.timeline.bean.SigninPerson;
 import com.timeline.bean.guest;
 import com.timeline.main.R;
 import com.timeline.main.R.color;
@@ -16,7 +17,7 @@ import com.timeline.widget.CircleImageView;
 
 public class SigninGuestAdapter extends BaseAdapter {
 	private Context context;// 运行上下文
-	private List<guest> listItems;// 数据集合
+	public List<SigninPerson> listItems;// 数据集合
 	private LayoutInflater listContainer;// 视图容器
 	private int itemViewResource;// 自定义项视图源
 
@@ -33,7 +34,7 @@ public class SigninGuestAdapter extends BaseAdapter {
 	 * @param data
 	 * @param resource
 	 */
-	public SigninGuestAdapter(Context context, List<guest> data,
+	public SigninGuestAdapter(Context context, List<SigninPerson> data,
 			int resource) {
 		this.context = context;
 		this.listContainer = LayoutInflater.from(context); // 创建视图容器并设置上下文
@@ -84,7 +85,7 @@ public class SigninGuestAdapter extends BaseAdapter {
 		}
 
 		// 设置文字和图片
-		guest gu = listItems.get(position);
+		SigninPerson gu = listItems.get(position);
 		if (position ==0) {
 			listItemView.no.setTextColor(context.getResources().getColor(R.color.yellow));
 		}else if(position ==1){

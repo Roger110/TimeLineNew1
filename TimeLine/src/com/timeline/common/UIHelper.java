@@ -188,8 +188,9 @@ private final static String TAG = "UIHelper";
 	 * 
 	 * @param activity
 	 */
-	public static void showGuSign(Activity activity) {
+	public static void showGuSign(String meetingID,Activity activity) {
 		Intent intent = new Intent(activity, GuestSigninAc.class);
+		intent.putExtra("meetingid", meetingID);
 		activity.startActivity(intent);
 	}
 	

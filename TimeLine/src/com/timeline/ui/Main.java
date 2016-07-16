@@ -13,7 +13,10 @@ import com.timeline.main.R;
 import com.timeline.slidedatetimepicker.SlideDateTimeListener;
 import com.timeline.slidedatetimepicker.SlideDateTimePicker;
 import com.timeline.webapi.HttpFactory;
+import com.timeline.app.AppContext;
+import com.timeline.bean.MeetingDescribe;
 import com.timeline.bean.MeetingInfo;
+import com.timeline.bean.ReturnInfo;
 import com.timeline.bean.User;
 import com.timeline.common.DateTimeHelper;
 import com.timeline.common.JsonToEntityUtils;
@@ -54,6 +57,8 @@ public class Main extends BaseActivity implements FragmentCallBack{
 	private ImageButton btnMyInfo;
 	private ImageButton btnadd;
 	
+	private VolleyListenerInterface loginvolleyListener;
+	
 	//day控件
 	String daydate;
 	private VolleyListenerInterface dayvolleyListener;//当前日期会议搜索监听
@@ -66,7 +71,9 @@ public class Main extends BaseActivity implements FragmentCallBack{
 	
 	
 	//meeting控件
-	
+	private String meetid;
+	private VolleyListenerInterface meetingvolleyListener;//当前日期会议搜索监听
+	private MeetingDescribe nowDescribe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +88,9 @@ public class Main extends BaseActivity implements FragmentCallBack{
         initData();
         mViewPager.setAdapter(mAdapter);
         initAllPagerData();
+        if (AppContext.getInstance().getIslogin()) {
+        	HttpFactory.Login(AppContext.getInstance().getAccount(),AppContext.getInstance().getPsw(), loginvolleyListener);
+		}
     }
     
 	/*
@@ -114,6 +124,35 @@ public class Main extends BaseActivity implements FragmentCallBack{
 				UIHelper.showNewEvent(Main.this);
 			}
 		});
+		loginvolleyListener = new VolleyListenerInterface(Main.this) {
+
+			@Override
+			public void onMySuccess(String result) {
+				// TODO Auto-generated method stub
+				try {
+					JSONObject myJsonObject = new JSONObject(result);
+					String rest = myJsonObject.getString("re_st");
+					if (rest.equals("success")) {
+						User us = JsonToEntityUtils.jsontoUser( myJsonObject.getString("re_info"));
+						AppContext.setUser(us);
+					}else {
+						ReturnInfo info = JsonToEntityUtils.jsontoReinfo(result);
+						UIHelper.ToastMessage(Main.this,info.getRe_info() );
+					}
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+
+			@Override
+			public void onMyError(VolleyError error) {
+				// TODO Auto-generated method stub
+
+			}
+
+		};
 		//day
 		daydate = DateTimeHelper.getDateNow();
 		dayvolleyListener = new VolleyListenerInterface(Main.this){
@@ -126,7 +165,7 @@ public class Main extends BaseActivity implements FragmentCallBack{
 					if (rest.equals("success")) {
 						MeetingInfo[] meetings
 						= JsonToEntityUtils.jsontoMeetingInfo( myJsonObject.getString("re_info"));
-						String id = meetings[0].getId();
+						meetid = meetings[0].getId();
 				}
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -150,13 +189,41 @@ public class Main extends BaseActivity implements FragmentCallBack{
 		
 		
 		//meeting
+		meetingvolleyListener = new VolleyListenerInterface(Main.this){
+			@Override
+			public void onMySuccess(String result) {
+				// TODO Auto-generated method stub
+				try {
+					JSONObject myJsonObject = new JSONObject(result);
+					String res = myJsonObject.getString("re_st");
+					if (res.equals("success")) {
+						String rest = myJsonObject.getString("re_info");
+						JSONObject meetingObject = new JSONObject(rest);
+						MeetingDescribe meetingdes = JsonToEntityUtils
+								.jsontoMeetingDes(meetingObject
+										.getString("meeting_info"));
+						nowDescribe = meetingdes;
+				}
+				} catch (Exception e) {
+					// TODO: handle exception
+					e.printStackTrace();
+				}
+			}
+
+			@Override
+			public void onMyError(VolleyError error) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		};
 	}
 	
 	  public void Interaction_Click(View v){
 		  UIHelper.showInterac(this);
 	  }
 	  public void Signin_Click(View v){
-		  UIHelper.showGuSign(this);
+		  UIHelper.showGuSign(meetid,this);
 	  }
 	  
     @Override
@@ -272,20 +339,48 @@ public class Main extends BaseActivity implements FragmentCallBack{
 			case R.id.indicator_day:
 				mTabIndicators.get(0).SetIconAlpha(1.0f);
 				mViewPager.setCurrentItem(0,false);
+				refreshData(v.getId());
 				break;
 			case R.id.indicator_week:
 				mTabIndicators.get(1).SetIconAlpha(1.0f);
 				mViewPager.setCurrentItem(1,false);
+				refreshData(v.getId());
 				break;
 			case R.id.indicator_month:
 				mTabIndicators.get(2).SetIconAlpha(1.0f);
 				mViewPager.setCurrentItem(2,false);
+				refreshData(v.getId());
 				break;
 			case R.id.indicator_meeting:
 				mTabIndicators.get(3).SetIconAlpha(1.0f);
 				mViewPager.setCurrentItem(3,false);
-				break;
+				refreshData(v.getId());
+				break;	
 			}
+		}
+    }
+    /**
+     *数据实时刷新
+     * @param Id
+     */
+    private void refreshData(int Id)
+    {
+		switch(Id)
+		{
+		case R.id.indicator_day:
+			
+			
+			break;
+		case R.id.indicator_week:
+
+			break;
+		case R.id.indicator_month:
+
+			break;
+		case R.id.indicator_meeting:
+			HttpFactory.getMeetingDescribe(meetid, meetingvolleyListener);
+			break;
+
 		}
     }
     
