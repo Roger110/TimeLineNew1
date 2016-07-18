@@ -121,6 +121,18 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.NoTitleBar" />
+ 			<activity            
+            android:name="com.timeline.ui.InfoEditAc"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoTitleBar" />
+ 			<activity            
+            android:name="com.timeline.ui.Test"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.NoTitleBar" />
     <!--    <activity
             android:name="com.timeline.main.Main"
             android:label="@string/app_name" >
