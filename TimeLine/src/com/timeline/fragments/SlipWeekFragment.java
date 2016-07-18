@@ -192,9 +192,9 @@ public class SlipWeekFragment extends Fragment implements OnGestureListener{
 				tvDate.setText(dateAdapter.getCurrentYear(selectPostion) + "年"
 						+ dateAdapter.getCurrentMonth(selectPostion) + "月"
 						+ dayNumbers[position] + "日");
-				fragmentCallBack.callbackFun1(dateAdapter.getCurrentYear(selectPostion) + "年"
-						+ dateAdapter.getCurrentMonth(selectPostion) + "月"
-						+ dayNumbers[position] + "日");
+				fragmentCallBack.callbackFun1(dateAdapter.getCurrentYear(selectPostion) + "-"
+						+ dateAdapter.getCurrentMonth(selectPostion) + "-"
+						+ dayNumbers[position] );
 			}
 		});
 		gridView.setLayoutParams(params);
@@ -288,6 +288,9 @@ public class SlipWeekFragment extends Fragment implements OnGestureListener{
 			tvDate.setText(dateAdapter.getCurrentYear(selectPostion) + "年"
 					+ dateAdapter.getCurrentMonth(selectPostion) + "月"
 					+ dayNumbers[selectPostion] + "日");
+			fragmentCallBack.callbackFun1(dateAdapter.getCurrentYear(selectPostion) + "-"
+					+ dateAdapter.getCurrentMonth(selectPostion) + "-"
+					+ dayNumbers[selectPostion] );
 			gvFlag++;
 			flipper1.addView(gridView, gvFlag);
 			dateAdapter.setSeclection(selectPostion);
@@ -311,6 +314,9 @@ public class SlipWeekFragment extends Fragment implements OnGestureListener{
 			tvDate.setText(dateAdapter.getCurrentYear(selectPostion) + "年"
 					+ dateAdapter.getCurrentMonth(selectPostion) + "月"
 					+ dayNumbers[selectPostion] + "日");
+			fragmentCallBack.callbackFun1(dateAdapter.getCurrentYear(selectPostion) + "-"
+					+ dateAdapter.getCurrentMonth(selectPostion) + "-"
+					+ dayNumbers[selectPostion] );
 			gvFlag++;
 			flipper1.addView(gridView, gvFlag);
 			dateAdapter.setSeclection(selectPostion);

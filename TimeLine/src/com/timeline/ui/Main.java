@@ -27,6 +27,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -163,9 +164,13 @@ public class Main extends BaseActivity implements FragmentCallBack{
 					JSONObject myJsonObject = new JSONObject(result);
 					String rest = myJsonObject.getString("re_st");
 					if (rest.equals("success")) {
+						Message msg = Message.obtain();
 						MeetingInfo[] meetings
 						= JsonToEntityUtils.jsontoMeetingInfo( myJsonObject.getString("re_info"));
 						meetid = meetings[0].getId();
+						msg.what = 0;
+						msg.obj = meetings;
+						AppContext.getInstance().mDayTagGetHandler.sendMessage(msg);
 				}
 				} catch (Exception e) {
 					// TODO: handle exception
@@ -393,9 +398,13 @@ public class Main extends BaseActivity implements FragmentCallBack{
 	}
 
 	@Override
-	public void callbackFun1(String arg) {
+	public void callbackFun1(String date) {
 		// TODO Auto-generated method stub
-		String string = arg;
+		String[] str = date.split("-");
+		if (Integer.valueOf(str[1])<10) {
+			date = str[0]+"-0"+str[1]+"-"+str[2];
+		}
+		HttpFactory.getMeetingjoin_list(date, dayvolleyListener);
 	}
 
 	@Override

@@ -8,6 +8,8 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.timeline.app.AppContext;
+import com.timeline.bean.MeetingInfo;
 import com.timeline.bean.MomentBean;
 import com.timeline.calendar.CalendarUtils;
 import com.timeline.calendar.MomentAdapter;
@@ -65,6 +67,7 @@ public class DayFragment extends Fragment {
 //						.getCurrentDayCalendar().clone());
 		mCalendar = Calendar.getInstance(Locale.CHINA);
 		System.out.println("onCreate-----------" + mPageNumber);
+		AppContext.getInstance().mDayTagGetHandler = mCalendarTagGetHandler;
 	}
 
 	@Override
@@ -169,7 +172,7 @@ public class DayFragment extends Fragment {
 			/**
 			 * 绘制提前安排的事项
 			 * */
-			initTag();
+		//	initTag();
 		};
 	};
 
@@ -205,10 +208,15 @@ public class DayFragment extends Fragment {
 			case 0:
 				//
 				try {
+					mEventContainer.removeAllViews();
+					MeetingInfo[] meetings = (MeetingInfo[]) msg.obj;
+					int start = Integer.valueOf(meetings[0].getStart_time());
+					int end = Integer.valueOf(meetings[0].getEnd_time());
 					//添加事件1
 					//开始时间：09:00，结束时间：09：45
 					int[] values = new int[] { 60 * 9, 60 * 9 + 45 };
 					values = new int[] { 60 * 14 + 11, 60 * 13 + 141 };
+					values = new int[] { start/60,end/60 };
 					System.out.println("values=====: "
 							+ Arrays.toString(values));
 					TextView tv = new TextView(getActivity());

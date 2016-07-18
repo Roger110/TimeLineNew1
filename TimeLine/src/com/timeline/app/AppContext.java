@@ -60,7 +60,7 @@ public class AppContext  extends Application{
 	
 	static TelephonyManager tm;
 	private static AppContext instance;
-
+	public Handler mDayTagGetHandler;
 	//VolleyQueue
 	public RequestQueue mQueue ;
 	
