@@ -92,7 +92,8 @@ public class HttpFactory {
 			    Map<String, String> map = new HashMap<String, String>();  
 			    map.put("mobile",account);  
 			    map.put("password", psw);  
-			    map.put("uuid", AppContext.GetIMEI()); ; 
+			   // map.put("uuid", AppContext.GetIMEI()); 
+			    map.put("uuid", "123456");
 			    map.put("device_type", "3"); 
 			    return map;  
 			  }  
@@ -217,6 +218,87 @@ public class HttpFactory {
 			    map.put("user_id",AppContext.getUser().getId());  
 			    map.put("login_token", AppContext.getUser().getLogin_token());  
 			    map.put("meeting_id",id); 
+			    return map;  
+			  }  
+			};  
+
+		request.setRetryPolicy(new DefaultRetryPolicy(50000,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		AppContext.getInstance().mQueue.add(request);
+	}
+	
+	
+	/**
+	 *会议签到http
+	 * @param uid
+	 * @param content
+	 * @param volleyListenerInterface
+	 */
+	public static void MeetingSignin(final String id,VolleyListenerInterface volleyListenerInterface){
+		String url = "http://event.gooddr.com/api/meeting/sign_in";
+		StringRequest request = new StringRequest(Method.POST, url,volleyListenerInterface.responseListener(), 
+			volleyListenerInterface.errorListener())
+			{  
+			  @Override  
+			  protected Map<String, String> getParams() throws AuthFailureError {  
+			    Map<String, String> map = new HashMap<String, String>();  
+			    map.put("user_id",AppContext.getUser().getId());  
+			    map.put("login_token", AppContext.getUser().getLogin_token());  
+			    map.put("meeting_id",id); 
+			    return map;  
+			  }  
+			};  
+
+		request.setRetryPolicy(new DefaultRetryPolicy(50000,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		AppContext.getInstance().mQueue.add(request);
+	}
+	
+	/**
+	 *自己收藏的会议列表http
+	 * @param uid
+	 * @param content
+	 * @param volleyListenerInterface
+	 */
+	public static void MeetingCollect(final String id,VolleyListenerInterface volleyListenerInterface){
+		String url = "http://event.gooddr.com/api/meeting/meeting_collect_list";
+		StringRequest request = new StringRequest(Method.POST, url,volleyListenerInterface.responseListener(), 
+			volleyListenerInterface.errorListener())
+			{  
+			  @Override  
+			  protected Map<String, String> getParams() throws AuthFailureError {  
+			    Map<String, String> map = new HashMap<String, String>();  
+			    map.put("user_id",AppContext.getUser().getId());  
+			    map.put("meeting_id",id); 
+			    return map;  
+			  }  
+			};  
+
+		request.setRetryPolicy(new DefaultRetryPolicy(50000,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+		AppContext.getInstance().mQueue.add(request);
+	}
+	
+	/**
+	 *自己参加过的会议历史http
+	 * @param uid
+	 * @param content
+	 * @param volleyListenerInterface
+	 */
+	public static void MeetingHistory(final String page,final String id,VolleyListenerInterface volleyListenerInterface){
+		String url = "http://event.gooddr.com/api/meeting/meeting_history";
+		StringRequest request = new StringRequest(Method.POST, url,volleyListenerInterface.responseListener(), 
+			volleyListenerInterface.errorListener())
+			{  
+			  @Override  
+			  protected Map<String, String> getParams() throws AuthFailureError {  
+			    Map<String, String> map = new HashMap<String, String>();  
+			    map.put("user_id",AppContext.getUser().getId());  
+			    map.put("meeting_id",id); 
+			    map.put("page",page); 
 			    return map;  
 			  }  
 			};  

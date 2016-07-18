@@ -17,9 +17,12 @@ import android.widget.ListView;
 import com.android.volley.VolleyError;
 import com.timeline.adapter.SigninGuestAdapter;
 import com.timeline.bean.MeetingInfo;
+import com.timeline.bean.ReturnInfo;
+import com.timeline.bean.ReturnMsg;
 import com.timeline.bean.SigninPerson;
 import com.timeline.bean.guest;
 import com.timeline.common.JsonToEntityUtils;
+import com.timeline.common.UIHelper;
 import com.timeline.interf.VolleyListenerInterface;
 import com.timeline.main.R;
 import com.timeline.webapi.HttpFactory;
@@ -34,6 +37,8 @@ public class GuestSigninAc extends BaseActivity{
 	private VolleyListenerInterface meetingSignPervolleyListener;//当前会议签到人搜索监听
 	private String meetid;
 	private List<SigninPerson> PersonsList;
+	
+	private VolleyListenerInterface SignvolleyListener;//当前会议自己签到监听
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,9 +65,7 @@ public class GuestSigninAc extends BaseActivity{
 			// TODO Auto-generated method stub
 			Intent in = new Intent(GuestSigninAc.this, Test.class);
 			startActivity(in);
-			readysignView.setVisibility(View.VISIBLE);
-			signView.setVisibility(View.GONE);
-			signView.setImageDrawable(getResources().getDrawable(R.drawable.icon_signin_ready));
+			HttpFactory.MeetingSignin(meetid, SignvolleyListener);
 		}
 	});
 			  
@@ -97,8 +100,32 @@ public class GuestSigninAc extends BaseActivity{
 		public void onMyError(VolleyError error) {
 			// TODO Auto-generated method stub
 			
+		}		
+	};
+	
+	
+	SignvolleyListener = new VolleyListenerInterface(GuestSigninAc.this){
+		@Override
+		public void onMySuccess(String result) {
+			// TODO Auto-generated method stub
+			try {
+				ReturnInfo info = JsonToEntityUtils.jsontoReinfo(result);
+				if (info.getRe_st().equals("success")) {
+					readysignView.setVisibility(View.VISIBLE);
+					signView.setVisibility(View.GONE);
+					signView.setImageDrawable(getResources().getDrawable(R.drawable.icon_signin_ready));
+				}
+				UIHelper.ToastMessage(GuestSigninAc.this,info.getRe_info().toString());
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
 		}
-		
+
+		@Override
+		public void onMyError(VolleyError error) {
+			// TODO Auto-generated method stub
+			
+		}		
 	};
   }
 }

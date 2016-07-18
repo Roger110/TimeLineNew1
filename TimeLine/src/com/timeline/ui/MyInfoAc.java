@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.timeline.common.PicUtil;
 import com.timeline.common.UIHelper;
 import com.timeline.main.R;
 import com.timeline.widget.CircleImageView;
@@ -124,7 +125,6 @@ public class MyInfoAc extends BaseActivity {
 			String picturePath = cursor.getString(columnIndex);
 			cursor.close();
 			path = picturePath;
-
 			showPhoto(headView);
 		}
 	}
@@ -144,7 +144,8 @@ public class MyInfoAc extends BaseActivity {
 		options.inSampleSize = scale;
 		options.inJustDecodeBounds = false;
 		bitmap = BitmapFactory.decodeFile(picturePath, options);
-
+//		String p = PicUtil.bitmaptoString(path);
+//		bitmap = PicUtil.stringtoBitmap(p);
 		photo.setImageBitmap(bitmap);
 		photo.setMaxHeight(350);
 	}

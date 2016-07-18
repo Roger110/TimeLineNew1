@@ -46,6 +46,7 @@
                 android:layout_marginTop="10dp"
                 android:text="登录/注册"
                 android:textColor="@color/selector_text_press_color"
+                android:clickable="true"
                 android:onClick="Btn_login"
                 android:textSize="@dimen/text_size_15" />
         </RelativeLayout>
