@@ -4,6 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -42,6 +43,18 @@ public class FileUtils {
 			e.printStackTrace();
 		}
 	}
+
+		public static void saveFile(String toSaveString)
+		{
+	      try {
+              FileWriter fw = new FileWriter("/storage/emulated/0" + "/aa.txt");
+              fw.flush();
+              fw.write(toSaveString);
+              fw.close();
+          } catch (Exception e) {
+              e.printStackTrace();
+          }
+	 }
 
 	/**
 	 * 读取文本文件

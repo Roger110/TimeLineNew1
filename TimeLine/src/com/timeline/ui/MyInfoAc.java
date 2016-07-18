@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.timeline.common.FileUtils;
 import com.timeline.common.PicUtil;
 import com.timeline.common.UIHelper;
 import com.timeline.main.R;
@@ -145,6 +146,7 @@ public class MyInfoAc extends BaseActivity {
 		options.inJustDecodeBounds = false;
 		bitmap = BitmapFactory.decodeFile(picturePath, options);
 //		String p = PicUtil.bitmaptoString(path);
+//		FileUtils.saveFile(p);
 //		bitmap = PicUtil.stringtoBitmap(p);
 		photo.setImageBitmap(bitmap);
 		photo.setMaxHeight(350);
